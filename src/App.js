@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  const[numero,setNumero] = useState(0)
+
+  function aumentar(){
+    const numeroActual = numero;
+    setNumero(numeroActual+1);
+  }
+  function disminuir(){
+    const numeroActual = numero;
+    setNumero(numeroActual-1);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Numero actual: {numero}</p>
+      <button onClick={disminuir}>Disminuir</button>
+      <button onClick={aumentar}>Aumentar</button>
     </div>
   );
 }
